@@ -1,4 +1,4 @@
 #pragma once
-#include "cpubase.h"
+#include "../include/CPUbase.h"
 
 
