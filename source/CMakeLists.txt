@@ -38,6 +38,7 @@ set(UI_src
 	src/eventos_ventanaRegistros.cpp
 	include/UI.h
 	include/ventanaRegistros.h
+	
 )
 
 
@@ -47,6 +48,12 @@ set(src
 	${cpu_src}
 	${UI_src}
 )
+
+if(linux)
+
+endif(linux)
+
+
 
 add_executable(${PROJECT_NAME} ${src})
 
@@ -71,6 +78,12 @@ IF(linux)
 	set(THREADS_PREFER_PTHREAD_FLAG ON)
 		find_package(Threads REQUIRED)
 	target_link_libraries(${PROJECT_NAME} Threads::Threads)
+
+
+	link_directories(${GTKMM_LIBRARY_DIRS})
+	include_directories(${GTKMM_INCLUDE_DIRS})
+	target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARIES})
+
 
 ENDIF()
 

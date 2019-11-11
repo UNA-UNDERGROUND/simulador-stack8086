@@ -3,12 +3,12 @@
 #pragma warning( push )
 #pragma warning( disable : 4250)
 
+
+
 #include <gtkmm/builder.h>
 #include <gtkmm/window.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/button.h>
-
-
 
 
 using gtkbuilder = Glib::RefPtr<Gtk::Builder>;
