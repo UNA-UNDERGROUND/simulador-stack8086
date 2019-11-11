@@ -7,16 +7,10 @@
 
 struct CPU {
 
-	union{
-		struct{
-			DataRegister A;
-			DataRegister B;
-			DataRegister C;
-			DataRegister D;
-		};
-		DataRegister generalRegister[4];
-	};
-
+	DataRegister A;
+	DataRegister B;
+	DataRegister C;
+	DataRegister D;
 
 
 	IndexRegister SI;
