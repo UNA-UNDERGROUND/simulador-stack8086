@@ -23,6 +23,7 @@ set(cpu_src
 	src/cpuOperators.cpp
 	src/CPUutils.cpp
 	src/physicalAddress.cpp
+	src/CPUmem.cpp
 	include/CPU.h
 	include/CPUbase.h
 	include/CPUdefs.h
