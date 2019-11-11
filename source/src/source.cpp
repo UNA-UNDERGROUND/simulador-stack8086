@@ -5,10 +5,10 @@
 
 #include "UI.h"
 
-#include "cpubase.h"
-#include "CPUutils.h"
-#include "terminal.h"
-#include "CPUmem.h"
+#include "../include/CPUbase.h"
+#include "../include/CPUutils.h"
+#include "../include/terminal.h"
+#include "../include/CPUmem.h"
 
 
 using std::cout;
@@ -59,9 +59,11 @@ int main(int argc, char**argv) {
 
 	core0.A = mainMem.readAddress16(0x0000);
 
+	#ifdef WIN32
 	if (!_putenv("GTK_CSD=0")){
 		cout << "Usando decoraciones nativas." << endl;
 	}
+	#endif
 
 	std::thread([&] {
 		terminalThread(argc, argv);
