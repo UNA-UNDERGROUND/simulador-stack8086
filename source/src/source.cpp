@@ -3,11 +3,13 @@
 #include <chrono>
 
 
-#include "cpubase.h"
 #include "UI.h"
+
+#include "cpubase.h"
 #include "CPUutils.h"
 #include "terminal.h"
 #include "CPUmem.h"
+
 
 using std::cout;
 using std::endl;

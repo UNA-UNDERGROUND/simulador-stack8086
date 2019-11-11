@@ -26,9 +26,8 @@ set(cpu_src
 )
 
 set(UI_src
-	UI Loader.cpp
-	${ventanaRegistros}
-	ventanaRegistros.cpp
+	src/UI Loader.cpp
+	src/ventanaRegistros.cpp
 	src/eventos_ventanaRegistros.cpp
 	include/UI.h
 	include/ventanaRegistros.h
