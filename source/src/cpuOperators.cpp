@@ -1,4 +1,4 @@
-#include "cpu.h"
+#include "../include/CPU.h"
 #include <ostream>
 
 namespace std {
