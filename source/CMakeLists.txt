@@ -9,13 +9,20 @@ set(CMAKE_CXX_STANDARD 17)
 
 
 set(terminal_src
-	src/Terminal.cpp
+	src/terminal.cpp
+	include/terminal.h
 )
 
 set(cpu_src
 	src/cpuOperators.cpp
 	src/CPUutils.cpp
 	src/physicalAddress.cpp
+	include/CPU.h
+	include/CPUbase.h
+	include/CPUdefs.h
+	include/CPUmem.h
+	include/CPUutils.h
+	
 )
 
 set(UI_src
@@ -23,6 +30,8 @@ set(UI_src
 	${ventanaRegistros}
 	ventanaRegistros.cpp
 	src/eventos_ventanaRegistros.cpp
+	include/UI.h
+	include/ventanaRegistros.h
 )
 
 
@@ -38,7 +47,7 @@ add_executable(${PROJECT_NAME} ${src})
 
 target_include_directories(
   ${PROJECT_NAME}
-  PUBLIC
+  PRIVATE
 	"include/"
 )
 
