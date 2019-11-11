@@ -33,7 +33,7 @@ set(cpu_src
 )
 
 set(UI_src
-	src/UI Loader.cpp
+	src/UI_Loader.cpp
 	src/ventanaRegistros.cpp
 	src/eventos_ventanaRegistros.cpp
 	include/UI.h
@@ -45,7 +45,7 @@ set(src
 	src/source.cpp
 	${terminal_src}
 	${cpu_src}
-	${ui_src}
+	${UI_src}
 )
 
 add_executable(${PROJECT_NAME} ${src})
