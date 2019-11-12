@@ -5,10 +5,10 @@
 
 #include "UI.h"
 
-#include "../include/CPUbase.h"
-#include "../include/CPUutils.h"
-#include "../include/terminal.h"
-#include "../include/CPUmem.h"
+#include "CPUbase.h"
+#include "CPUutils.h"
+#include "terminal.h"
+#include "CPUmem.h"
 
 
 using std::cout;
