@@ -54,7 +54,7 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	constructor->get_widget("txtES", txtES);
 	constructor->get_widget("txtSS", txtSS);
 	//texto registros de indice
-	constructor->get_widget("txtSI", txtCS);
+	constructor->get_widget("txtSI", txtSI);
 	constructor->get_widget("txtDI", txtDI);
 	constructor->get_widget("txtBP", txtBP);
 	constructor->get_widget("txtSP", txtSP);
