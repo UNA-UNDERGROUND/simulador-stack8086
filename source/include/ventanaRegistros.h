@@ -9,6 +9,7 @@
 #include <gtkmm/window.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/button.h>
+#include <gtkmm/switch.h>
 
 
 using gtkbuilder = Glib::RefPtr<Gtk::Builder>;
@@ -53,6 +54,17 @@ protected:
 	Gtk::Button* btnRDI;
 	Gtk::Button* btnRBP;
 	Gtk::Button* btnRSP;
+
+	//banderas del procesador
+	Gtk::Switch* swCF;
+	Gtk::Switch* swZF;
+	Gtk::Switch* swSF;
+	Gtk::Switch* swOF;
+	Gtk::Switch* swPF;
+	Gtk::Switch* swAF;
+	Gtk::Switch* swIF;
+	Gtk::Switch* swDF;
+	
 
 	//texto registros generales
 	Gtk::Entry* txtAL;
