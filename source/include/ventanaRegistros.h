@@ -48,6 +48,17 @@ protected:
 	void on_btnRBP_clicked();
 	void on_btnRSP_clicked();
 
+	//banderas del CPU
+	void on_swCF_switch();
+	void on_swZF_switch();
+	void on_swSF_switch();
+	void on_swOF_switch();
+	void on_swPF_switch();
+	void on_swAF_switch();
+	void on_swIF_switch();
+	void on_swDF_switch();
+	
+
 
 	//widgets:
 	//botones
