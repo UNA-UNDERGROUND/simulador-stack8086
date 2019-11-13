@@ -21,29 +21,28 @@ class ventanaRegistros :public Gtk::Window {
 
 public:
 
-
 	ventanaRegistros(BaseObjectType* cobject, const gtkbuilder& refGlade);
 
 protected:
 
-	void conectarEventos();
+	void conectarEventos(const gtkbuilder& constructor);
 
 
-	//Signal handlers:
-	//void on_btnSalir_clicked();
+	//señales de eventos:
 	void on_btnRA_clicked();
 	void on_btnRB_clicked();
 	void on_btnRC_clicked();
 	void on_btnRD_clicked();
 
-	//Member widgets:
+	//widgets:
 
-
+	//botones registros generales
 	Gtk::Button* btnRA;
 	Gtk::Button* btnRB;
 	Gtk::Button* btnRC;
 	Gtk::Button* btnRD;
 
+	//registros generales
 	Gtk::Entry* txtAL;
 	Gtk::Entry* txtAH;
 	Gtk::Entry* txtBL;
@@ -53,7 +52,6 @@ protected:
 	Gtk::Entry* txtDL;
 	Gtk::Entry* txtDH;
 
-	gtkbuilder constructor;
 
 
 public:

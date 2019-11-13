@@ -6,14 +6,16 @@
 extern CPU core0;
 
 
-ventanaRegistros::ventanaRegistros(BaseObjectType* cobject, const gtkbuilder& refGlade) : Gtk::Window(cobject),
-constructor(refGlade) {
-	conectarEventos();
+ventanaRegistros::ventanaRegistros(
+	BaseObjectType* cobject,
+	 const gtkbuilder& refGlade): 
+	 Gtk::Window(cobject){
+	conectarEventos(refGlade);
 
 }
 
 
-void ventanaRegistros::conectarEventos() {
+void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 
 	constructor->get_widget("btnRA", btnRA);
 	constructor->get_widget("btnRB", btnRB);
