@@ -25,12 +25,11 @@ int UIThread(int argc, char** argv) {
 		auto app = Gtk::Application::create(argc, argv, "org.gtkmm.emuASM.base");
 
 		gtkbuilder constructor = Gtk::Builder::create_from_file("UI/emuASM.glade");
-		ventanaRegistros* ventana = nullptr;
-		constructor->get_widget_derived("ventanaRegistros", ventana);
-		//constructor->get_widget("ventana", ventana);
+		ventanaRegistros* ventanaReg = nullptr;
+		constructor->get_widget_derived("ventanaRegistros", ventanaReg);
 
-		if(ventana){
-			return app->run(*ventana);
+		if(ventanaReg){
+			return app->run(*ventanaReg);
 		}
 	}
 	catch (Glib::FileError & err) {
