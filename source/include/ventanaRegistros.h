@@ -44,10 +44,10 @@ protected:
 	Gtk::Button* btnRD;
 
 	//botones registros de segmento
-	Gtk::Button* btnCS;
-	Gtk::Button* btnDS;
-	Gtk::Button* btnES;
-	Gtk::Button* btnSS;
+	Gtk::Button* btnRCS;
+	Gtk::Button* btnRDS;
+	Gtk::Button* btnRES;
+	Gtk::Button* btnRSS;
 
 	//botones registro de indices
 	Gtk::Button* btnRSI;
