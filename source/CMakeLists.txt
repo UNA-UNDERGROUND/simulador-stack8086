@@ -118,7 +118,7 @@ add_custom_command(
 		TARGET ${PROJECT_NAME} PRE_BUILD
                COMMAND ${CMAKE_COMMAND} -E copy_directory
                    ${CMAKE_SOURCE_DIR}/UI/ 
-				   $<TARGET_FILE_DIR:${PROJECT_NAME}>
+				   $<TARGET_FILE_DIR:${PROJECT_NAME}>/UI/
 				   
 				   )
 
