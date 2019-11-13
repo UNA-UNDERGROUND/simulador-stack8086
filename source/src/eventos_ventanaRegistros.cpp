@@ -58,3 +58,29 @@ void::ventanaRegistros::on_btnRBP_clicked() {
 void::ventanaRegistros::on_btnRSP_clicked() {
 	updateRegister(*txtSP, core0.SP);
 }
+
+//banderas del CPU
+void ventanaRegistros::on_swCF_switch(){
+	core0.flags.CF=swCF->get_active();
+}
+void ventanaRegistros::on_swZF_switch(){
+	core0.flags.ZF=swZF->get_active();
+}
+void ventanaRegistros::on_swSF_switch(){
+	core0.flags.SF=swSF->get_active();
+}
+void ventanaRegistros::on_swOF_switch(){
+	core0.flags.OF=swOF->get_active();
+}
+void ventanaRegistros::on_swPF_switch(){
+	core0.flags.PF=swPF->get_active();
+}
+void ventanaRegistros::on_swAF_switch(){
+	core0.flags.AF=swAF->get_active();
+}
+void ventanaRegistros::on_swIF_switch(){
+	core0.flags.IF=swIF->get_active();
+}
+void ventanaRegistros::on_swDF_switch(){
+	core0.flags.DF=swDF->get_active();
+}
