@@ -4,7 +4,7 @@
 cmake_minimum_required (VERSION 3.1)
 
 
-project (emuASM)
+project (emuASM CXX)
 set(CMAKE_CXX_STANDARD 17)
 
 set(GNU_compile_flags
@@ -49,9 +49,7 @@ set(src
 	${UI_src}
 )
 
-if(linux)
 
-endif(linux)
 
 
 
@@ -63,6 +61,33 @@ target_include_directories(
   PRIVATE
 	"include/"
 )
+
+if(windows)
+
+
+
+	set(GTKMM_LIBRARY_DIR
+		"C:/vcpkg/installed/x64-windows/lib/gtkmm.lib"
+		"C:/vcpkg/installed/x64-windows/lib/glibmm.lib"
+		"C:/vcpkg/installed/x64-windows/lib/glib-2.0.lib"
+		"C:/vcpkg/installed/x64-windows/lib/sigc-2.0.lib"
+		"C:/vcpkg/installed/x64-windows/lib/atkmm.lib"
+	)
+
+
+	find_path(GTKMM_INCLUDE_DIR NAMES gtkmm)
+
+	include_directories(${GTKMM_INCLUDE_DIR})
+
+
+
+
+	link_directories(${GTKMM_LIBRARY_DIR})
+	
+
+	target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARY_DIR})
+
+endif()
 
 
 IF(linux)
@@ -80,13 +105,22 @@ IF(linux)
 	target_link_libraries(${PROJECT_NAME} Threads::Threads)
 
 
-	link_directories(${GTKMM_LIBRARY_DIRS})
-	include_directories(${GTKMM_INCLUDE_DIRS})
-	target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARIES})
-
-
 ENDIF()
 
+
+#add_custom_command(
+#        TARGET foo POST_BUILD
+#        COMMAND ${CMAKE_COMMAND} -E copy
+#                ${CMAKE_SOURCE_DIR}/UI/emuASM
+#                ${CMAKE_CURRENT_BINARY_DIR}/input.txt)
+
+add_custom_command(
+		TARGET ${PROJECT_NAME} PRE_BUILD
+               COMMAND ${CMAKE_COMMAND} -E copy_directory
+                   ${CMAKE_SOURCE_DIR}/UI/ 
+				   $<TARGET_FILE_DIR:${PROJECT_NAME}>
+				   
+				   )
 
 #cmake_minimum_required (VERSION 3.0)
 #project (ejemplo)
