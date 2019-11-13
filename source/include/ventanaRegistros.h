@@ -42,7 +42,19 @@ protected:
 	Gtk::Button* btnRC;
 	Gtk::Button* btnRD;
 
-	//registros generales
+	//botones registros de segmento
+	Gtk::Button* btnCS;
+	Gtk::Button* btnDS;
+	Gtk::Button* btnES;
+	Gtk::Button* btnSS;
+
+	//botones registro de indices
+	Gtk::Button* btnRSI;
+	Gtk::Button* btnRDI;
+	Gtk::Button* btnRBP;
+	Gtk::Button* btnRSP;
+
+	//texto registros generales
 	Gtk::Entry* txtAL;
 	Gtk::Entry* txtAH;
 	Gtk::Entry* txtBL;
@@ -52,6 +64,17 @@ protected:
 	Gtk::Entry* txtDL;
 	Gtk::Entry* txtDH;
 
+	//texto registros de segmento
+	Gtk::Entry* txtCS;
+	Gtk::Entry* txtDS;
+	Gtk::Entry* txtES;
+	Gtk::Entry* txtSS;
+
+	//texto registros de segmento
+	Gtk::Entry* txtSI;
+	Gtk::Entry* txtDI;
+	Gtk::Entry* txtBP;
+	Gtk::Entry* txtSP;
 
 
 public:
