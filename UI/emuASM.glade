@@ -738,7 +738,7 @@ CPU</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btnRSI1">
+                      <object class="GtkButton" id="btnRCS">
                         <property name="label" translatable="yes">Aplicar</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -784,7 +784,7 @@ CPU</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btnRSI2">
+                      <object class="GtkButton" id="btnRDS">
                         <property name="label" translatable="yes">Aplicar</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -830,7 +830,7 @@ CPU</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btnRSI3">
+                      <object class="GtkButton" id="btnRES">
                         <property name="label" translatable="yes">Aplicar</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -876,7 +876,7 @@ CPU</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btnRSI4">
+                      <object class="GtkButton" id="btnRSS">
                         <property name="label" translatable="yes">Aplicar</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -1076,7 +1076,7 @@ CPU</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btnBPI">
+                      <object class="GtkButton" id="btnRBP">
                         <property name="label" translatable="yes">Aplicar</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
