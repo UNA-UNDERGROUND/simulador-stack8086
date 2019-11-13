@@ -13,6 +13,10 @@ void updateRegister(Gtk::Entry& txtL, Gtk::Entry& txtH, DataRegister& R) {
 	txtL.set_text(toHex(R.L));
 	txtH.set_text(toHex(R.H));
 }
+void updateRegister(Gtk::Entry& txtR, Register16& R) {
+	toReg(txtR.get_text().c_str(), R);
+	txtR.set_text(toHex(R));
+}
 
 
 void::ventanaRegistros::on_btnRA_clicked() {
