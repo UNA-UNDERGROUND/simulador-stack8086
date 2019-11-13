@@ -8,6 +8,10 @@ private:
 public:
 
 	physicalAddress(const size_t& value = 0x00000);
+	physicalAddress(
+		const Register16& segment=0x0000,
+		const Register16& address=0x0000);
+
 
 	const size_t& getAddress() const;
 
