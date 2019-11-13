@@ -34,7 +34,7 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	constructor->get_widget("btnRSI", btnRSI);
 	constructor->get_widget("btnRDI", btnRDI);
 	constructor->get_widget("btnRBP", btnRBP);
-	constructor->get_widget("btnRSP", btnRSS);
+	constructor->get_widget("btnRSP", btnRSP);
 
 	//interruptores de banderas
 	constructor->get_widget("swCF", swCF);
