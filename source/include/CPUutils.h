@@ -9,5 +9,7 @@ bool isHex(const std::string& s);
 
 
 std::string toHex(Register8 i);
+std::string toHex(Register16 i);
 bool toReg(const char* s,Register8& val);
+bool toReg(const char* s,Register16& val);
 
