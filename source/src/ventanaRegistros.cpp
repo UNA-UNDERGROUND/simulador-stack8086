@@ -36,6 +36,16 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	constructor->get_widget("btnRBP", btnRBP);
 	constructor->get_widget("btnRSP", btnRSS);
 
+	//interruptores de banderas
+	constructor->get_widget("swCF", swCF);
+	constructor->get_widget("swZF", swZF);
+	constructor->get_widget("swSF", swSF);
+	constructor->get_widget("swOF", swOF);
+	constructor->get_widget("swPF", swPF);
+	constructor->get_widget("swAF", swAF);
+	constructor->get_widget("swIF", swIF);
+	constructor->get_widget("swDF", swDF);
+
 	//texto registros generales
 	constructor->get_widget("txtAL", txtAL);
 	constructor->get_widget("txtAH", txtAH);
@@ -110,6 +120,26 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	}
 
 	//registros de indice
+	if (txtSI && btnRSI){
+		btnRSI->signal_clicked().connect(
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnRSI_clicked));
+		txtSI->set_text(toHex(core0.SI));
+	}
+	if (txtDI && btnRDI){
+		btnRDI->signal_clicked().connect(
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnRDI_clicked));
+		txtDI->set_text(toHex(core0.DI));
+	}
+	if (txtBP && btnRBP){
+		btnRBP->signal_clicked().connect(
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnRBP_clicked));
+		txtBP->set_text(toHex(core0.BP));
+	}
+	if (txtSP && btnRSP){
+		btnRSP->signal_clicked().connect(
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnRSP_clicked));
+		txtSP->set_text(toHex(core0.SP));
+	}
 
 
 
