@@ -30,26 +30,40 @@ protected:
 
 
 	//señales de eventos:
+	//registros generales
 	void on_btnRA_clicked();
 	void on_btnRB_clicked();
 	void on_btnRC_clicked();
 	void on_btnRD_clicked();
 
-	//widgets:
+	//registros de segmento
+	void on_btnRCS_clicked();
+	void on_btnRDS_clicked();
+	void on_btnRES_clicked();
+	void on_btnRSS_clicked();
 
-	//botones registros generales
+	//registros de segmento
+	void on_btnRSI_clicked();
+	void on_btnRDI_clicked();
+	void on_btnRBP_clicked();
+	void on_btnRSP_clicked();
+
+
+	//widgets:
+	//botones
+	//registros generales
 	Gtk::Button* btnRA;
 	Gtk::Button* btnRB;
 	Gtk::Button* btnRC;
 	Gtk::Button* btnRD;
 
-	//botones registros de segmento
+	//registros de segmento
 	Gtk::Button* btnRCS;
 	Gtk::Button* btnRDS;
 	Gtk::Button* btnRES;
 	Gtk::Button* btnRSS;
 
-	//botones registro de indices
+	//registro de indices
 	Gtk::Button* btnRSI;
 	Gtk::Button* btnRDI;
 	Gtk::Button* btnRBP;
@@ -65,8 +79,8 @@ protected:
 	Gtk::Switch* swIF;
 	Gtk::Switch* swDF;
 	
-
-	//texto registros generales
+	//texto
+	//registros generales
 	Gtk::Entry* txtAL;
 	Gtk::Entry* txtAH;
 	Gtk::Entry* txtBL;
@@ -76,13 +90,13 @@ protected:
 	Gtk::Entry* txtDL;
 	Gtk::Entry* txtDH;
 
-	//texto registros de segmento
+	//registros de segmento
 	Gtk::Entry* txtCS;
 	Gtk::Entry* txtDS;
 	Gtk::Entry* txtES;
 	Gtk::Entry* txtSS;
 
-	//texto registros de segmento
+	//registros de segmento
 	Gtk::Entry* txtSI;
 	Gtk::Entry* txtDI;
 	Gtk::Entry* txtBP;
