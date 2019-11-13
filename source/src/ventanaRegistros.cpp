@@ -10,6 +10,7 @@ ventanaRegistros::ventanaRegistros(
 	BaseObjectType* cobject,
 	const gtkbuilder& refGlade): 
 	Gtk::Window(cobject){
+	this->set_title("registros del CPU");
 	conectarEventos(refGlade);
 
 }
