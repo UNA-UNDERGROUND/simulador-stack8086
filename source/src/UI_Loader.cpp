@@ -26,12 +26,12 @@ int UIThread(int argc, char** argv) {
 
 		gtkbuilder constructor = Gtk::Builder::create_from_file("UI/emuASM.glade");
 		ventanaRegistros* ventana = nullptr;
-		constructor->get_widget_derived("ventana", ventana);
+		constructor->get_widget_derived("ventanaRegistros", ventana);
 		//constructor->get_widget("ventana", ventana);
 
-
-		return app->run(*ventana);
-
+		if(ventana){
+			return app->run(*ventana);
+		}
 	}
 	catch (Glib::FileError & err) {
 		std::cerr << "Error al cargar el archivo: " << err.what() << endl;
