@@ -18,7 +18,7 @@ void updateRegister(Gtk::Entry& txtR, Register16& R) {
 	txtR.set_text(toHex(R));
 }
 
-
+//registros generales
 void::ventanaRegistros::on_btnRA_clicked() {
 	updateRegister(*txtAL, *txtAH, core0.A);
 }
@@ -30,4 +30,31 @@ void::ventanaRegistros::on_btnRC_clicked() {
 }
 void::ventanaRegistros::on_btnRD_clicked() {
 	updateRegister(*txtDL, *txtDH, core0.D);
+}
+//registros de segmento
+void::ventanaRegistros::on_btnRCS_clicked() {
+	updateRegister(*txtCS, core0.CS);
+}
+void::ventanaRegistros::on_btnRDS_clicked() {
+	updateRegister(*txtDS, core0.DS);
+}
+void::ventanaRegistros::on_btnRES_clicked() {
+	updateRegister(*txtES, core0.ES);
+}
+void::ventanaRegistros::on_btnRSS_clicked() {
+	updateRegister(*txtSS, core0.SS);
+}
+
+//registros de indice
+void::ventanaRegistros::on_btnRSI_clicked() {
+	updateRegister(*txtSI, core0.SI);
+}
+void::ventanaRegistros::on_btnRDI_clicked() {
+	updateRegister(*txtDI, core0.DI);
+}
+void::ventanaRegistros::on_btnRBP_clicked() {
+	updateRegister(*txtBP, core0.BP);
+}
+void::ventanaRegistros::on_btnRSP_clicked() {
+	updateRegister(*txtSP, core0.SP);
 }
