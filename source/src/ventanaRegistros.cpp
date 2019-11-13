@@ -141,6 +141,73 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 		txtSP->set_text(toHex(core0.SP));
 	}
 
+	//banderas del CPU
+	if(swCF){
+		swCF->set_active(core0.flags.CF);
+		swCF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swCF_switch));
+	}
+	if(swZF){
+		swZF->set_active(core0.flags.ZF);
+		swZF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swZF_switch));
+	}
+	if(swSF){
+		swSF->set_active(core0.flags.SF);
+		swSF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swSF_switch));
+	}
+	if(swOF){
+		swOF->set_active(core0.flags.OF);
+		swOF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swOF_switch));
+	}
+	if(swPF){
+		swPF->set_active(core0.flags.PF);
+		swPF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swPF_switch));
+	}
+	if(swAF){
+		swAF->set_active(core0.flags.AF);
+		swAF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swAF_switch));
+	}
+	if(swIF){
+		swIF->set_active(core0.flags.IF);
+		swIF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swIF_switch));
+	}
+	if(swDF){
+		swDF->set_active(core0.flags.DF);
+		swDF->property_active()
+		.signal_changed().connect(
+			sigc::mem_fun(
+				*this, 
+				&ventanaRegistros::on_swDF_switch));
+	}
+	
+
 
 
 }
