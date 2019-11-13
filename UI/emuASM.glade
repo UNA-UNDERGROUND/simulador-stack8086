@@ -491,7 +491,7 @@ Generales</property>
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkSwitch" id="wsPF">
+                              <object class="GtkSwitch" id="swPF">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                               </object>
