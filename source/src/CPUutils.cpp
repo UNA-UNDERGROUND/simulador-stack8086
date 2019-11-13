@@ -1,8 +1,13 @@
 #include "CPUutils.h"
 #include <sstream>
+#include <string>
+#include <iomanip>
+
 
 std::ostream& operator << (std::ostream& o, const Register8& r) {
-	o << std::uppercase << std::hex << unsigned(r);
+	char s[2];
+	sprintf(s,"%02X",unsigned(r));
+	o << s;
 	return o;
 }
 std::ostream& operator << (std::ostream& o, const DataRegister& r) {
@@ -19,9 +24,9 @@ std::string toHex(Register8 i)
 }
 std::string toHex(Register16 i)
 {
-	std::stringstream stream;
-	stream << i;
-	return stream.str();
+	char s[4];
+	sprintf(s,"%04X",i);
+	return s;
 }
 
 bool isHex(const std::string& s) {
