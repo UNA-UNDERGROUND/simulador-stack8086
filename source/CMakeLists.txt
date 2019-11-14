@@ -14,7 +14,8 @@ set(GNU_compile_flags
 
 
 set(cpu_src
-	src/cpuOperators.cpp
+	src/CPUoperations.cpp
+	src/CPUoperators.cpp
 	src/CPUutils.cpp
 	src/physicalAddress.cpp
 	src/CPUmem.cpp
@@ -31,7 +32,7 @@ set(UI_src
 	src/ventanaRegistros.cpp
 	src/ventanaMemoria.cpp
 	src/eventos_ventanaRegistros.cpp
-	src/eventos_ventanaRegistros.cpp
+	src/eventos_ventanaMemoria.cpp
 	include/UI.h
 	include/ventanaRegistros.h
 	include/ventanaMemoria.h
@@ -46,7 +47,7 @@ set(src
 )
 
 
-set(console false)
+set(console true)
 
 if(windows AND (NOT console))
 	add_executable(${PROJECT_NAME} WIN32 ${src})
@@ -69,6 +70,7 @@ if(windows)
 		"C:/vcpkg/installed/x64-windows/lib/glibmm.lib"
 		"C:/vcpkg/installed/x64-windows/lib/glib-2.0.lib"
 		"C:/vcpkg/installed/x64-windows/lib/sigc-2.0.lib"
+		"C:/vcpkg/installed/x64-windows/lib/giomm.lib"
 		"C:/vcpkg/installed/x64-windows/lib/atkmm.lib"
 	)
 

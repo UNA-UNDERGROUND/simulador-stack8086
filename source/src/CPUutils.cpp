@@ -20,6 +20,11 @@ std::string toHex(Register16 i)
 	sprintf(s,"%04X",i);
 	return s;
 }
+std::string toHex(size_t i) {
+	char s[6];
+	sprintf(s, "%05X", i);
+	return s;
+}
 
 bool isHex(const std::string& s) {
 	return s.find_first_not_of("0123456789ABCDEF") == std::string::npos;
@@ -38,6 +43,16 @@ bool toReg(const char*s,Register8& val) {
 bool toReg(const char*s,Register16& val) {
 	char* p;
 	Register16 resultado = (Register16)strtol(s, &p, 16);
+	if (*p != 0) {
+		return false;
+	}
+
+	val = resultado;
+	return true;
+}
+bool toVal(const char* s, size_t& val) {
+	char* p;
+	size_t resultado = (size_t)strtol(s, &p, 16);
 	if (*p != 0) {
 		return false;
 	}

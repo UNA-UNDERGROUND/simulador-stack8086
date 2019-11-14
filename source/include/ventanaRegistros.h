@@ -24,6 +24,8 @@ public:
 
 	ventanaRegistros(BaseObjectType* cobject, const gtkbuilder& refGlade);
 
+	void actualizarVista();
+
 protected:
 
 	void conectarEventos(const gtkbuilder& constructor);
@@ -59,11 +61,8 @@ protected:
 	void on_swDF_switch();
 	
 
-	void on_btnMostrar_clicked();
 
-	//ventana de memoria
-	Gtk::Window* ventanaMemoria = nullptr;
-	Gtk::Button* btnMostrar = nullptr;
+
 
 	//widgets:
 	//botones

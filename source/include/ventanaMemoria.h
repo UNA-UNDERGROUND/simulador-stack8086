@@ -9,10 +9,9 @@
 #include <gtkmm/window.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/button.h>
-#include <gtkmm/treeview.h>
-#include <gtkmm/liststore.h>
 #include <gtkmm.h>
-#include <gtkmm/treeviewcolumn.h >
+#include <ventanaRegistros.h>
+
 
 
 using gtkbuilder = Glib::RefPtr<Gtk::Builder>;
@@ -26,6 +25,8 @@ class ventanaMemoria :public Gtk::Window {
 public:
 
 	ventanaMemoria(BaseObjectType* cobject, const gtkbuilder& refGlade);
+	void actualizarVista();
+	void setVentanaRegistros(ventanaRegistros* v);
 
 private:
 	class mColumnas : public Gtk::TreeModel::ColumnRecord
@@ -45,9 +46,29 @@ private:
 
 	void conectarEventos(const gtkbuilder& constructor);
 
-	Gtk::TreeView* tvDirecciones;
-	mColumnas storeMemoria;
-	Glib::RefPtr<Gtk::ListStore> refStore;
+
+
+	void on_btnEjecutar_clicked();
+	void on_btnIR_clicked();
+	void on_btnArriba_clicked();
+	void on_btnAbajo_clicked();
+
+	Gtk::Button* btnEjecutar;
+	Gtk::Button* btnIR;
+	Gtk::Button* btnArriba;
+	Gtk::Button* btnAbajo;
+
+
+	Gtk::Switch* swAccion;
+	Gtk::ComboBox* comboRegistro;
+
+	Gtk::Entry* txtDir[4];
+	Gtk::Entry* txtVal[4];
+	Gtk::Entry* txtDirFisica;
+
+	ventanaRegistros* vRegistros;
+
+	size_t pagina = 0;
 
 public:
 

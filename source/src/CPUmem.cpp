@@ -19,7 +19,7 @@ bool MemoryArea::writeAddress(const physicalAddress& address, const Register16& 
 	return writeAddress(address, DataRegister(data));
 }
 bool MemoryArea::writeAddress(const physicalAddress& address, const DataRegister& data) {
-	if (address <= (0xFFFF - 1)) {
+	if (address <= (0xFFFFF - 1)) {
 		memory[address] = data.L;
 		memory[address + (size_t)1] = data.H;
 		return true;

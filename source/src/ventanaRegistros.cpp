@@ -74,9 +74,7 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	constructor->get_widget("txtBP", txtBP);
 	constructor->get_widget("txtSP", txtSP);
 
-	//cargar ventanaMemoria
-	constructor->get_widget("ventanaMemoria", ventanaMemoria);
-	constructor->get_widget("btnMostrar", btnMostrar);
+
 
 	//inicializacion registros
 	//registros generales
@@ -122,7 +120,7 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	}
 	if (txtSS && btnRSS){
 		btnRSS->signal_clicked().connect(
-			sigc::mem_fun(*this, &ventanaRegistros::on_btnRCS_clicked));
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnRSS_clicked));
 		txtSS->set_text(toHex(core0.SS));
 	}
 
@@ -215,11 +213,6 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	}
 	
 
-	if (ventanaMemoria && btnMostrar){
-		btnMostrar->signal_clicked().connect(
-			sigc::mem_fun(*this, &ventanaRegistros::on_btnMostrar_clicked));
-	}
-
 
 
 }
@@ -227,7 +220,95 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 
 
 
+void ventanaRegistros::actualizarVista() {
+	//inicializacion registros
+//registros generales
+	if (txtAL && txtAH) {
+		txtAL->set_text(toHex(core0.A.L));
+		txtAH->set_text(toHex(core0.A.H));
+	}
+	if (txtBL && txtBH) {
+		txtBL->set_text(toHex(core0.B.L));
+		txtBH->set_text(toHex(core0.B.H));
+	}
+	if (txtCL && txtCH) {
 
+		txtCL->set_text(toHex(core0.C.L));
+		txtCH->set_text(toHex(core0.C.H));
+	}
+	if (txtDL && txtDH) {
+
+		txtDL->set_text(toHex(core0.D.L));
+		txtDH->set_text(toHex(core0.D.H));
+	}
+	//registros de segmento
+	if (txtCS) {
+
+		txtCS->set_text(toHex(core0.CS));
+	}
+	if (txtDS) {
+		txtDS->set_text(toHex(core0.DS));
+	}
+	if (txtES) {
+
+		txtES->set_text(toHex(core0.ES));
+	}
+	if (txtSS) {
+
+		txtSS->set_text(toHex(core0.SS));
+	}
+
+	//registros de indice
+	if (txtSI) {
+
+		txtSI->set_text(toHex(core0.SI));
+	}
+	if (txtDI) {
+
+		txtDI->set_text(toHex(core0.DI));
+	}
+	if (txtBP) {
+
+		txtBP->set_text(toHex(core0.BP));
+	}
+	if (txtSP) {
+
+		txtSP->set_text(toHex(core0.SP));
+	}
+
+	//banderas del CPU
+	if (swCF) {
+		swCF->set_active(core0.flags.CF);
+
+	}
+	if (swZF) {
+		swZF->set_active(core0.flags.ZF);
+
+	}
+	if (swSF) {
+		swSF->set_active(core0.flags.SF);
+
+	}
+	if (swOF) {
+		swOF->set_active(core0.flags.OF);
+
+	}
+	if (swPF) {
+		swPF->set_active(core0.flags.PF);
+
+	}
+	if (swAF) {
+		swAF->set_active(core0.flags.AF);
+
+	}
+	if (swIF) {
+		swIF->set_active(core0.flags.IF);
+
+	}
+	if (swDF) {
+		swDF->set_active(core0.flags.DF);
+	}
+}
 
 
 

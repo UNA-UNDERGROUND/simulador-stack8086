@@ -85,6 +85,3 @@ void ventanaRegistros::on_swDF_switch(){
 	core0.flags.DF=swDF->get_active();
 }
 
-void ventanaRegistros::on_btnMostrar_clicked() {
-	ventanaMemoria->show_all();
-}

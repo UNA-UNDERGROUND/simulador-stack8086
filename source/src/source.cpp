@@ -17,7 +17,6 @@ using std::endl;
 
 
 CPU core0;
-MemoryArea mainMem;
 
 #ifdef WIN32
 
@@ -40,16 +39,9 @@ int WINAPI WinMain(
 
 int main(int argc, char**argv) {
 
-	physicalAddress dirA(0x0001, 0x0000);
-	physicalAddress dirB(0x0000, 0x0010);
-
-	mainMem.writeAddress(dirA,0xABCD);
-
-	//mainMem.writeAddress(0x0000, (std::byte)0xCD); //LOW Address
-	//mainMem.writeAddress(0x0001, (std::byte)0xAB); //HI Address
-
-
-	core0.A = mainMem.readAddress16(dirB);
+	core0.SS = 0x100;
+	core0.SP = 0xFFFE;
+	
 
 	#ifdef WIN32
 	if (!_putenv("GTK_CSD=0")){
