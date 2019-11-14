@@ -2,6 +2,78 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="ventanaMemoria">
+    <property name="can_focus">False</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkGrid">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkGrid">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Direccion Fisica</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSearchEntry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="primary_icon_name">edit-find-symbolic</property>
+                <property name="primary_icon_activatable">False</property>
+                <property name="primary_icon_sensitive">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkTreeView" id="tvDirecciones">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection" id="colSeleccionada"/>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="ventanaRegistros">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
@@ -332,6 +404,7 @@ Generales</property>
                   <object class="GtkGrid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="column_homogeneous">True</property>
                     <child>
                       <object class="GtkGrid">
                         <property name="visible">True</property>
@@ -638,7 +711,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">IP</property>
-                        <property name="width_chars">10</property>
+                        <property name="width_chars">5</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -651,10 +724,23 @@ CPU</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
                         <property name="max_length">4</property>
-                        <property name="width_chars">10</property>
+                        <property name="width_chars">8</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btnMostrar">
+                        <property name="label" translatable="yes">mostrar
+memoria</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
                         <property name="top_attach">0</property>
                       </packing>
                     </child>
@@ -961,7 +1047,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">SI</property>
-                        <property name="width_chars">6</property>
+                        <property name="width_chars">8</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -987,6 +1073,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="margin_right">10</property>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -1008,7 +1095,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">DI</property>
-                        <property name="width_chars">6</property>
+                        <property name="width_chars">8</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -1055,7 +1142,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">BP</property>
-                        <property name="width_chars">6</property>
+                        <property name="width_chars">8</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -1102,7 +1189,7 @@ CPU</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">SP</property>
-                        <property name="width_chars">6</property>
+                        <property name="width_chars">8</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>

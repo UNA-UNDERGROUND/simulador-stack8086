@@ -13,12 +13,6 @@ set(GNU_compile_flags
 
 
 
-
-set(terminal_src
-	src/terminal.cpp
-	include/terminal.h
-)
-
 set(cpu_src
 	src/cpuOperators.cpp
 	src/CPUutils.cpp
@@ -35,26 +29,30 @@ set(cpu_src
 set(UI_src
 	src/UI_Loader.cpp
 	src/ventanaRegistros.cpp
+	src/ventanaMemoria.cpp
+	src/eventos_ventanaRegistros.cpp
 	src/eventos_ventanaRegistros.cpp
 	include/UI.h
 	include/ventanaRegistros.h
+	include/ventanaMemoria.h
 	
 )
 
 
 set(src 	
 	src/source.cpp
-	${terminal_src}
 	${cpu_src}
 	${UI_src}
 )
 
 
+set(console false)
 
-
-
-add_executable(${PROJECT_NAME} ${src})
-
+if(windows AND (NOT console))
+	add_executable(${PROJECT_NAME} WIN32 ${src})
+else()
+	add_executable(${PROJECT_NAME} ${src})
+endif()
 
 target_include_directories(
   ${PROJECT_NAME}
@@ -86,6 +84,8 @@ if(windows)
 	
 
 	target_link_libraries(${PROJECT_NAME} ${GTKMM_LIBRARY_DIR})
+
+
 
 endif()
 

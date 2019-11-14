@@ -1,5 +1,5 @@
 #include "ventanaRegistros.h"
-
+#include "ventanaMemoria.h"
 
 #pragma warning( push )
 #pragma warning( disable : 4250)

@@ -13,10 +13,14 @@ ventanaRegistros::ventanaRegistros(
 	this->set_title("registros del CPU");
 	conectarEventos(refGlade);
 
+
+
 }
 
 
 void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
+
+
 	//cargar widgets
 	//botones de registros generales
 	constructor->get_widget("btnRA", btnRA);
@@ -70,6 +74,9 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 	constructor->get_widget("txtBP", txtBP);
 	constructor->get_widget("txtSP", txtSP);
 
+	//cargar ventanaMemoria
+	constructor->get_widget("ventanaMemoria", ventanaMemoria);
+	constructor->get_widget("btnMostrar", btnMostrar);
 
 	//inicializacion registros
 	//registros generales
@@ -207,6 +214,11 @@ void ventanaRegistros::conectarEventos(const gtkbuilder& constructor) {
 				&ventanaRegistros::on_swDF_switch));
 	}
 	
+
+	if (ventanaMemoria && btnMostrar){
+		btnMostrar->signal_clicked().connect(
+			sigc::mem_fun(*this, &ventanaRegistros::on_btnMostrar_clicked));
+	}
 
 
 

@@ -23,7 +23,7 @@ public:
 //https://wiki.osdev.org/Segmentation
 
 class MemoryArea{
-	std::byte memory[0xFFFFF + 1] = {};
+	std::byte memory[0xFFFFF + 1] = {(std::byte)0x00000};
 
 public:
 

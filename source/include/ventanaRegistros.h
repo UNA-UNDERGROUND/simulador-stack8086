@@ -59,6 +59,11 @@ protected:
 	void on_swDF_switch();
 	
 
+	void on_btnMostrar_clicked();
+
+	//ventana de memoria
+	Gtk::Window* ventanaMemoria = nullptr;
+	Gtk::Button* btnMostrar = nullptr;
 
 	//widgets:
 	//botones

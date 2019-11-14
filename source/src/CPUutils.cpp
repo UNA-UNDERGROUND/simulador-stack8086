@@ -4,27 +4,19 @@
 #include <iomanip>
 
 
-std::ostream& operator << (std::ostream& o, const Register8& r) {
-	char s[2];
-	sprintf(s,"%02X",unsigned(r));
-	o << s;
-	return o;
-}
-std::ostream& operator << (std::ostream& o, const DataRegister& r) {
-	o << std::uppercase << std::hex << r.X;
-	return o;
-}
 
-
+//en ambas funciones en VS se requiere un poco mas de espacio para
+//evitar que se detecte una corrupcion de memoria en modo depuracion
+//sin embargo en linux funciona perfectamente con el espacio adecuado
 std::string toHex(Register8 i)
 {
-	std::stringstream stream;
-	stream << i;
-	return stream.str();
+	char s[4];
+	sprintf(s, "%02X", unsigned(i));
+	return s;
 }
 std::string toHex(Register16 i)
 {
-	char s[4];
+	char s[6];
 	sprintf(s,"%04X",i);
 	return s;
 }
