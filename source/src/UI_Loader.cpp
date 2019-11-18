@@ -17,6 +17,20 @@
 using std::cerr;
 using std::endl;
 
+
+ventanaRegistros* ventanaReg = nullptr;
+ventanaMemoria* ventanaMem = nullptr;
+
+void updateUI() {
+	if (ventanaReg){
+		ventanaReg->actualizarVista();
+	}
+	if (ventanaMem)
+	{
+		ventanaMem->actualizarVista();
+	}
+}
+
 int UIThread(int argc, char** argv) {
 
 	try {
@@ -24,8 +38,7 @@ int UIThread(int argc, char** argv) {
 		auto app = Gtk::Application::create(argc, argv, "org.gtkmm.emuASM.base");
 
 		gtkbuilder constructor = Gtk::Builder::create_from_file("UI/emuASM.glade");
-		ventanaRegistros* ventanaReg = nullptr;
-		ventanaMemoria* ventanaMem = nullptr;
+
 		constructor->get_widget_derived("ventanaRegistros", ventanaReg);
 		constructor->get_widget_derived("ventanaMemoria", ventanaMem);
 

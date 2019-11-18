@@ -7,7 +7,7 @@
 //https://en.wikipedia.org/wiki/X86_instruction_listings#Original_8086/8088_instructions
 
 
-enum cpuReg{
+enum class cpuReg{
 	AX,
 	BX,
 	CX,
@@ -46,9 +46,12 @@ struct CPU {
 
 	MemoryArea mainMemory;
 
-	void push(const cpuReg& val);
-	void pop(const cpuReg& val);
-
+	bool push(const cpuReg& val);
+	bool pop(const cpuReg& val);
+	bool mov(const cpuReg& destiny, const cpuReg& source);								//registro-registro
+	bool mov(const cpuReg& destiny, const Register16& value);							//registro-valor (16 bits)
+	bool mov(const cpuReg& destiny, const Register8& value);							//registro-valor (8 bits)
+	bool mov(const cpuReg& destiny, const Register16& segment, const Register16 index);	//registro-direccion (segmento,indice)
 
 };
 
