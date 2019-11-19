@@ -4,8 +4,8 @@
 Para instalar el proyecto sobre windows se recomienda visual studio 2019, aunque 2017 puede funcionar pero dispone de menor soporte y no ha sido probado
 
 ## Requisitos
-- [Visual Studio](https://visualstudio.microsoft.com/es/vs/):en caso de windows
-- [Visual Studio Code](https://code.visualstudio.com/): (opcional)
+- [**Visual Studio**](https://visualstudio.microsoft.com/es/vs/):en caso de windows
+- [**Visual Studio Code**](https://code.visualstudio.com/): (opcional)
 - [**vcpkg**](https://github.com/microsoft/vcpkg): gestor de dependencias del proyecto
 - [**cmake**](https://cmake.org/): generador de proyectos
 - [**ninja**](https://ninja-build.org/): (suele venir incluido con visual studio), (opcional)
