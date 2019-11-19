@@ -25,6 +25,7 @@ primero es nescesario descargar vcpkg en la raiz de la siguiente manera(si no se
 C:\> git clone https://github.com/Microsoft/vcpkg.git
 C:\> cd vcpkg
 
+C:\vcpkg>bootstrap-vcpkg.bat
 PS> .\bootstrap-vcpkg.bat
 Linux:~/$ ./bootstrap-vcpkg.sh
 ```
