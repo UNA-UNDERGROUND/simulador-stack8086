@@ -185,7 +185,7 @@ void terminalThread(int argc, char** argv) {
 int main(int argc, char**argv) {
 
 	//core0.SS = 0x100;
-	core0.SP = 0x0006;
+	core0.SP = 0x0008;
 	
 
 	#ifdef WIN32
