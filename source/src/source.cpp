@@ -51,6 +51,7 @@ void terminalThread(int argc, char** argv) {
 	std::stringstream s;
 	while (!salir){
 		s.clear();
+		s.str("");
 		string linea;
 		string comando;
 		string registro;
@@ -71,7 +72,8 @@ void terminalThread(int argc, char** argv) {
 			limpiar();
 		}
 		else if (comando == "PUSH" || comando == "POP"){
-			s << registro;
+			s >> std::skipws >> registro;
+			for (auto& c : registro) c = toupper(c);
 			cpuReg val=cpuReg::DX;//en caso de error no se realizara modificacion
 			bool registroValido = true;
 			if (registro == "AX") {
@@ -111,7 +113,8 @@ void terminalThread(int argc, char** argv) {
 		else if (comando == "MOV") {
 			std::getline(s, registro, ',');
 			s >> std::skipws >> destino;
-			
+			for (auto& c : registro) c = toupper(c);
+			for (auto& c : destino) c = toupper(c);
 			
 			cpuReg source = cpuReg::AX;	//en caso de error se copia sobre si mismo
 			cpuReg destiny = cpuReg::AX;	
@@ -170,6 +173,9 @@ void terminalThread(int argc, char** argv) {
 			cout << "comando no encontrado, use un comando valido como: PUSH AX" << endl;
 		}
 
+
+
+
 		updateUI();
 	}
 
@@ -179,7 +185,7 @@ void terminalThread(int argc, char** argv) {
 int main(int argc, char**argv) {
 
 	//core0.SS = 0x100;
-	//core0.SP = 0xFFFE;
+	core0.SP = 0x0006;
 	
 
 	#ifdef WIN32
