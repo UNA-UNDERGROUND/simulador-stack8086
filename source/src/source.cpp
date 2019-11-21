@@ -10,6 +10,18 @@
 #include "CPUmem.h"
 
 
+
+#include <QApplication>
+#include <QQmlApplicationEngine>
+
+int main(int argc, char** argv)
+{
+	QApplication app(argc, argv);
+	QQmlApplicationEngine engine;
+	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+	return app.exec();
+}
+
 using std::cout;
 using std::endl;
 using std::string;
@@ -182,7 +194,7 @@ void terminalThread(int argc, char** argv) {
 }
 
 
-int main(int argc, char**argv) {
+int main2(int argc, char**argv) {
 
 	//core0.SS = 0x100;
 	core0.SP = 0x0008;

@@ -30,5 +30,13 @@ ENDIF()
 
 message("------------------------------")
 
+
+find_package(Qt5 COMPONENTS Widgets Qml Quick REQUIRED)
+
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Qml) 
+find_package(Qt5Quick) 
+find_package(Qt5QuickControls2)
+
 # Include sub-projects.
 add_subdirectory ("source")
